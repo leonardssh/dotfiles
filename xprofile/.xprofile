@@ -1,0 +1,36 @@
+# Faster key repeat and delay
+xset r rate 210 40
+
+# Starting picom
+picom -b
+
+# Stop screen from going blank
+xset s off
+xset -dpms
+xset s noblank
+
+# Hide Cursor when typing
+xbanish &
+
+# Open flameshot on startup
+flameshot &
+
+# Save your eyes
+redshift-gtk &
+
+# Set wallpaper
+feh --bg-scale --randomize $HOME/Wallpapers/* &
+
+# Screens
+hdmi=`xrandr | grep ' connected' | grep 'HDMI' | awk '{print $1}'`
+
+if [ "$hdmi" = "HDMI-1-0" ]; then
+  xrandr --output eDP1 --auto --output HDMI-1-0 --primary --auto --right-of eDP1 &
+else
+  xrandr --output eDP1 --primary --auto --output HDMI-1 --off &
+fi
+
+export LANG=en_US.UTF-8
+export EDITOR="vim"
+export TERMINAL="alacritty"
+export BROWSER="brave"

@@ -1,0 +1,28 @@
+#!/usr/bin/env node
+
+const SYMBOLS = ["BTCUSDT"];
+
+const URL = "https://www.binance.com/api/v1/ticker/allPrices";
+const { get } = require("https");
+
+get(URL, (res) => {
+  if (res.statusCode !== 200) {
+    return console.log(`Something went wrong: ${res.statusCode}`);
+  }
+
+  let output = [];
+
+  res.on("data", (chunk) => {
+    output.push(chunk);
+  });
+
+  res.on("end", () => {
+    output = JSON.parse(Buffer.concat(output).toString());
+    const symbols = output.filter((r) => SYMBOLS.includes(r.symbol));
+    console.log(
+      symbols
+        .map((s) => `${s.symbol}: ${parseFloat(s.price).toFixed(2)}`)
+        .join(", ")
+    );
+  });
+});
