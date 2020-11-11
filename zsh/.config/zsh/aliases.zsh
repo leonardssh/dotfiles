@@ -23,3 +23,4 @@ alias dev='ranger ~/Development'
 alias zrc='nvim ~/.zshrc'
 alias kill_discord="ps -ef | grep discord-canary | grep -v grep | awk '{print $2}' | xargs -r kill -9"
 alias reload_polybar="polybar-msg cmd restart"
+alias random_bg="feh --bg-fill --randomize ~/Wallpapers/*"
