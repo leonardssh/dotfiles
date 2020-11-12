@@ -109,7 +109,7 @@ bindsym $mod+Shift+c		        exec --no-startup-id killall picom
 bindsym $mod+v			            exec --no-startup-id $term -e nvim
 
 # b
-bindsym $mod+b			            exec --no-startup-id feh --bg-fill --randomize ~/Downloads/*
+bindsym $mod+b			            exec --no-startup-id feh --bg-fill --randomize ~/Wallpapers/*
 
 # n
 bindsym $mod+n			            exec --no-startup-id kill -s USR1 $(pidof deadd-notification-center)
