@@ -129,12 +129,12 @@ set $ws1 "1: General"
 set $ws2 "2: Discord"
 set $ws3 "3: Dev"
 set $ws4 "4: Spotify"
-set $ws5 5
-set $ws6 6
-set $ws7 7
-set $ws8 8
-set $ws9 9
-set $ws10 10
+set $ws5 "5: Postman"
+set $ws6 "6: Others"
+set $ws7 "7: Others"
+set $ws8 "8: Others"
+set $ws9 "9: Others"
+set $ws10 "10: Others"
 
 # Assing autofloat
 for_window [title=".*Emulator.*"] floating enable
@@ -216,6 +216,7 @@ exec stretchly
 # Assing windows
 assign [class="discord"] $ws2
 for_window [class="Spotify"] move to workspace $ws4
+for_window [class="Postman"] move to workspace $ws5
 
 # disable window titles
 new_window pixel
