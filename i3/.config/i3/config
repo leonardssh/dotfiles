@@ -51,9 +51,9 @@ bindsym $mod+Shift+r		        exec --no-startup-id winresize
 bindsym $mod+t 			            exec $term -e ytop
 bindsym $mod+Shift+t            focus mode_toggle
 
-# y
-bindsym Print			              exec --no-startup-id flameshot gui -p ~/Pics/screenshots
-bindsym $mod+Print		          exec --no-startup-id flameshot full -p ~/Pics/screenshots
+# print
+bindsym Print			              exec flameshot gui -p ~/Pics/screenshots
+bindsym Shift+Print		          exec flameshot full -p ~/Pics/screenshots
 
 # u
 bindsym $mod+u                  [urgent=latest] focus
