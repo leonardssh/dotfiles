@@ -1,0 +1,23 @@
+#!/usr/bin/env node
+
+const { get } = require("https");
+
+const BASE_API_URL = "https://api.samp-servers.net/v2/server/";
+const NEPHRITE_ADDRESS = "ruby.nephrite.ro:7777";
+
+get(BASE_API_URL + NEPHRITE_ADDRESS, (res) => {
+  if (res.statusCode !== 200) {
+    return console.log(`Something went wrong: ${res.statusCode}`);
+  }
+
+  let output = [];
+
+  res.on("data", (chunk) => {
+    output.push(chunk);
+  });
+
+  res.on("end", () => {
+    output = JSON.parse(Buffer.concat(output).toString());
+    console.log(`${output.core.pc}/${output.core.pm}`);
+  });
+});
