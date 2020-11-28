@@ -25,3 +25,4 @@ alias kill_discord="ps -ef | grep discord-canary | grep -v grep | awk '{print $2
 alias reload_polybar="polybar-msg cmd restart"
 alias random_bg="feh --bg-fill --randomize ~/Wallpapers/*"
 alias vi="nvim"
+alias neofetch="neofetch --source ~/.leo"
