@@ -25,7 +25,7 @@ feh --bg-scale --randomize $HOME/Wallpapers/* &
 hdmi=`xrandr | grep ' connected' | grep 'HDMI' | awk '{print $1}'`
 
 if [ "$hdmi" = "HDMI-1-0" ]; then
-  xrandr --output eDP1 --auto --output HDMI-1-0 --primary --auto --above eDP1 &
+  xrandr --output eDP1 --auto --output HDMI-1-0 --primary --auto --right-of eDP1 &
 else
   xrandr --output eDP1 --primary --auto --output HDMI-1 --off &
 fi
